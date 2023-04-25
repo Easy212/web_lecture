@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원관리</title>
+<style>
+table, th, td{
+    border: 1px solid red;
+}
+</style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>선수id</th>
+        <th>선수이름</th>
+    </tr>
+    {% for row in result_table%}
+    <tr>
+        <td>{{row.player_id}}</td>
+        <td>{{row.player_name}}</td>
+        <td><button onclick="location.href='/detail?id={{row.player_id}}&name={{row.player_name}}'">상세정보</button></td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+
+</html>
